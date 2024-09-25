@@ -1,0 +1,333 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.Container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+   grid-template:
+    "nav header" max-content /* 第一行，导航和头部 */
+    "nav main" /* 第二行，导航和主体 */
+    / minmax(max-content, 250px);
+}
+
+.sideBar {
+  background-color: #ff8fbd;
+  grid-area: nav;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  color: white;
+}
+
+
+.sideBar h1 {
+  display: flex; /* 使用 flexbox */
+  align-items: center; /* 垂直居中 */
+  gap: 5px;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.sideBar h1 svg {
+  height: 3em;
+  width: 3em;
+}
+
+.sideBar h1 span {
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sideBar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 增加间距 */
+  justify-content: center;
+  align-items: start;
+}
+
+.sideBar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s; /* 添加平滑过渡效果 */
+}
+
+.sideBar nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* 悬停时背景颜色变化 */
+  transform: scale(1.05); /* 悬停时稍微放大 */
+}
+
+.sideBar nav svg {
+  width: 5em; /* 可以根据需要调整大小 */
+  height: 5em;
+}
+
+.sideBar nav span {
+  font-size: 25px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fdf5f5; /* 中灰色 */
+  padding: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.searchBox {
+  width: 300px; /* 初始宽度 */
+  padding: 10px 15px; /* 内边距 */
+  border: 2px solid #ffb0f4; /* 边框颜色 */
+  border-radius: 25px; /* 圆角效果 */
+  font-size: 16px; /* 字体大小 */
+  color: #333; /* 字体颜色 */
+  background-color: #f0f8ff; /* 背景颜色 */
+  transition: width 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+}
+
+.searchBox:hover {
+  width: 400px; /* 悬停时的宽度 */
+  border-color: #ff76f8; /* 悬停时的边框颜色 */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* 悬停时的阴影效果 */
+  outline: none; /* 去掉默认的轮廓 */
+}
+
+.Welcome {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  padding: 15px; /* 内边距 */
+  border-radius: 10px; /* 圆角 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影 */
+  width: 100%;
+}
+
+.avatar {
+  width: 50px; /* 头像宽度 */
+  height: 50px; /* 头像高度 */
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 15px; /* 头像与文本之间的间距 */
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column; /* 垂直排列文本 */
+}
+
+.username {
+  margin: 0; /* 去掉默认外边距 */
+  font-size: 1.2em; /* 字体大小 */
+  color: #333; /* 字体颜色 */
+}
+
+.greeting {
+  margin: 0; /* 去掉默认外边距 */
+  color: #777; /* 次级文本颜色 */
+}
+
+.button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button button {
+  height: 50%;
+  background-color: #ff69b4; /* 粉色背景 */
+  color: white; /* 白色文字 */
+  border: none; /* 去掉边框 */
+  padding: 10px 20px; /* 内边距 */
+  border-radius: 25px; /* 圆角效果 */
+  font-size: 16px; /* 字体大小 */
+  cursor: pointer; /* 鼠标指针 */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.button button:hover {
+  background-color: #ff1493; /* 悬停时更深的粉色 */
+  transform: scale(1.05); /* 悬停时稍微放大 */
+}
+
+.mainContent {
+  grid-area: main;
+  overflow-y: scroll;
+  background-color: #ffd6fcb0; /* 白色 */
+  padding: 20px;
+  border-radius: 4px;
+  color: #333; /* 深色字体 */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-size: 0.8em;
+}
+
+.Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.Card {
+  width: 400px; /* 固定宽度 */
+  height: 300px; /* 固定高度 */
+  border: 2px solid #ff69b4; /* 粉色边框 */
+  border-radius: 10px; /* 圆角效果 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+  overflow: hidden; /* 超出内容隐藏 */
+  transition: transform 0.3s; /* 过渡效果 */
+  position: relative;
+}
+
+.Card:hover {
+  transform: scale(1.05); /* 悬停时放大效果 */
+}
+
+.card-header {
+  background-color: #ff69b4;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body p {
+  line-height: 1.5;
+  color: #333;
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-size: 20px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.edit-btn,
+.delete-btn {
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #ff1493;
+}
+
+.Announcements {
+    border: 2px solid white; /* 边框颜色和宽度 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 15px; /* 内边距 */
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    margin: 20px 0; /* 外边距 */
+    font-family: Arial, sans-serif; /* 字体 */
+}
+
+.Announcement{
+    position: relative;
+    padding: 5px 10px;
+}
+
+.Announcement h5 {
+    margin: 0 0 10px; /* 标题的外边距 */
+    font-size: 1.5em; /* 标题大小 */
+    color: #333; /* 标题颜色 */
+}
+
+.Announcement p {
+    line-height: 1.6; /* 行高 */
+    color: #555; /* 正文颜色 */
+    font-size: 1em;
+}
+
+.Announcement:not(:last-child)::after {
+    content: "";
+    border-top: 1px solid #ff88e1; /* 分割线的颜色和样式 */
+     position: absolute;
+    left: 0;
+    right: 0;
+     bottom: 4px;
+}
+
+.Trending {
+    border: 2px solid white; /* 边框颜色和宽度 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 15px; /* 内边距 */
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    margin: 20px 0; /* 外边距 */
+    font-family: Arial, sans-serif; /* 字体 */
+}
+
+.FriendsProfile {
+  margin-inline: auto;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  padding: 5px; /* 内边距 */
+  width: 100%;
+}
+
+.friendavatar {
+  width: 45px; /* 头像宽度 */
+  height: 45px; /* 头像高度 */
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 10px; /* 头像与文本之间的间距 */
+}
+
+.friendInfo {
+  display: flex;
+  flex-direction: column; /* 垂直排列文本 */
+}
+
+.firendname {
+  margin: 0; /* 去掉默认外边距 */
+  font-size: 1em; /* 字体大小 */
+  color: #ffaeae; /* 字体颜色 */
+}
+
+.comment{
+     margin-top: 0.5em;
+     font-size: 0.8em;
+}
+
